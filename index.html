@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#070b1d">
+  <title>Neon Dodge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>NEON DODGE</span></div>
+      <button id="muteButton" class="icon-button" type="button" aria-label="Toggle sound">🔊</button>
+    </header>
+
+    <section class="game-frame" aria-label="Neon Dodge game">
+      <canvas id="gameCanvas" width="960" height="600"></canvas>
+      <div class="hud" aria-live="polite">
+        <div class="hud-stat"><span> SCORE</span><strong id="score">000000</strong></div>
+        <div class="hud-stat"><span> TIME</span><strong id="time">00:00</strong></div>
+        <div class="hud-stat"><span> BEST</span><strong id="highScore">000000</strong></div>
+        <div class="hud-stat level"><span> THREAT</span><strong id="level">LEVEL 1</strong></div>
+        <div class="health" aria-label="Health"><span>HP</span><div id="healthPips"></div></div>
+        <div class="effects" id="effects"></div>
+      </div>
+      <div id="toast" class="toast" role="status"></div>
+
+      <section id="menuPanel" class="panel active">
+        <div class="panel-kicker">// PILOT INITIALIZED</div>
+        <h1>NEON<br><em>DODGE</em></h1>
+        <p class="tagline">How long can you survive?</p>
+        <div class="controls"><span>WASD</span><b>or</b><span>ARROW KEYS</span><small>MOVE YOUR SHIP</small></div>
+        <button id="startButton" class="primary-button" type="button">START GAME <span>→</span></button>
+        <p class="menu-best">HIGH SCORE <strong id="menuHighScore">000000</strong></p>
+      </section>
+
+      <section id="pausePanel" class="panel"><div class="panel-kicker">// SYSTEM HOLD</div><h2>GAME <em>PAUSED</em></h2><p>Press <b>P</b> or <b>ESC</b> to resume</p><button id="resumeButton" class="secondary-button" type="button">RESUME</button></section>
+
+      <section id="gameOverPanel" class="panel"><div class="panel-kicker">// SIGNAL LOST</div><h2>GAME <em>OVER</em></h2><div class="results"><div><span>SCORE</span><strong id="finalScore">000000</strong></div><div><span>SURVIVED</span><strong id="finalTime">00:00</strong></div><div><span>THREAT</span><strong id="finalLevel">LEVEL 1</strong></div><div><span>BEST</span><strong id="finalBest">000000</strong></div></div><p id="newBest" class="new-best">★ NEW HIGH SCORE! ★</p><div class="panel-actions"><button id="againButton" class="primary-button" type="button">PLAY AGAIN <span>→</span></button><button id="menuButton" class="secondary-button" type="button">MAIN MENU</button></div></section>
+    </section>
+    <p class="footer-hint">P / ESC TO PAUSE <span>•</span> DODGE THE FALLING STARS</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
